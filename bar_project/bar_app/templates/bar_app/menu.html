@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта бара</title>
+</head>
+<body>
+    <h1>Карта бара</h1>
+    {% for category in categories %}
+        <h2>{{ category.name }}</h2>
+        <ul>
+            {% for drink in category.drinks.all %}
+                <li>
+                    <strong>{{ drink.name }}</strong> - ${{ drink.price }}
+                    {% if drink.image %}
+                        <div>
+                            <img src="{{ drink.image.url }}" alt="{{ drink.name }}" style="max-height: 150px;">
+                        </div>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</body>
+</html>
