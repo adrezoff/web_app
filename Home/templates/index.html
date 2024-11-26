@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block title%}
+BAR PROJECT
+{% endblock title%}
+
+{% block content%}
+        <section class="banner_area_index">
+            <div class="container">
+                <div class="banner_content">
+                    <h4>Bar project</h4>
+                    <h5>Стильный бар</h5>
+
+                </div>
+            </div>
+        </section>
+        <section class="most_popular_item_area">
+            <div class="container">
+                <div class="s_white_title">
+                    <h3>Меню и карта бара</h3>
+                </div>
+                <div class="popular_filter">
+                    <ul>
+                        <li class="active" data-filter="*"><a href="">All</a></li>
+                      {% for category in categories%}
+                        <li data-filter=".{{category}}"><a href="#{{category}}">{{category}}</a></li>
+                      {%endfor%}
+                    </ul>
+                </div>
+
+                <div class="p_recype_item_main">
+                    <div class="row p_recype_item_active">
+                      {%for category in categories%}
+                      {% for meal_list in meal_lists%}
+                      {% if meal_list.category == category%}
+
+                        <div class="col-md-6 {{category}}">
+                            <div class="media">
+                                <div class="media-left">
+                                    <img src="{{meal_list.image.url}}" alt="{%static 'img/recype/recype-1.jpg' %}">
+                                </div>
+                                <div class="media-body">
+                                    <a href="#"><h3>{{meal_list.name}}</h3></a>
+                                    <h4>{{meal_list.price}} РУБ</h4>
+                                    <p>{{meal_list.description}} </p>
+                                </div>
+                            </div>
+                        </div>
+                      {%endif%}
+
+                      {%endfor%}
+                      {%endfor%}
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+{%endblock content%}

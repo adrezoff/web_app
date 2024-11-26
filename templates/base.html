@@ -1,0 +1,167 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="{% static 'img/logo-3m.png' %}" type="image/x-icon" />
+        <title>
+          {% block title%}
+
+          {%endblock title%}
+        </title>
+
+        <!-- Icon css link -->
+        <link href="{% static 'vendors/material-icon/css/materialdesignicons.min.css' %}" rel="stylesheet">
+        <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+        <link href="{% static 'vendors/linears-icon/style.css' %}" rel="stylesheet">
+        <!-- Bootstrap -->
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+        <!-- Rev slider css -->
+        <link href="{% static 'vendors/revolution/css/settings.css' %}" rel="stylesheet">
+        <link href="{% static 'vendors/revolution/css/layers.css' %}" rel="stylesheet">
+        <link href="{% static 'vendors/revolution/css/navigation.css' %}" rel="stylesheet">
+
+        <!-- Extra plugin css -->
+        <link href="{% static 'vendors/bootstrap-selector/bootstrap-select.css' %}" rel="stylesheet">
+        <link href="{% static 'vendors/bootatrap-date-time/bootstrap-datetimepicker.min.css' %}" rel="stylesheet">
+
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+        <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+
+    </head>
+    <body>
+
+        <div id="preloader">
+            <div class="loader absolute-center">
+                <div class="loader__box"><b class="top"></b></div>
+                <div class="loader__box"><b class="top"></b></div>
+                <div class="loader__box"><b class="top"></b></div>
+            </div>
+        </div>
+
+        <!--================ Frist hader Area =================-->
+        <div class="first_header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="header_contact_details">
+                            <a href="#"><i class="fa fa-phone"></i>+7 (343) 777-77-77</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="header_contact_details">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="header_social">
+                            <ul>
+                                <li><a href="https://vk.com/examle14dasw"><i class="fa fa-vk"></i></a></li>
+                                <li><a href="https://t.me/fdssdf3424"><i class="fa fa-telegram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--================End Footer Area =================-->
+
+        <!--================End Footer Area =================-->
+        <header class="main_menu_area">
+            <nav class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Навигация</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href=""><img src="{% static 'img/logo-3m.png' %}" alt=""></a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="{% url 'Home:index' %}">Главная</a></li>
+                            <li><a href="{% url 'about:about' %}">О нас</a></li>
+                            <li><a href="{% url 'Menu:menu' %}">Меню</a></li>
+                            <li><a href="{% url 'Booking:table' %}">Заказ столика</a></li>
+                            <li><a href="{% url 'Contact:contact'%}">Контакты</a></li>
+
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+        </header>
+        <!--================End Footer Area =================-->
+{% block content%}
+
+
+{%endblock content%}
+
+        <footer class="footer_area">
+            <div class="footer_widget_area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <aside class="f_widget about_widget">
+                                <div class="f_w_title">
+                                    <h4>Социальные сети</h4>
+                                </div>
+                                <p>Вступай в наши социальные сети, так ты не пропустишь важные новости и акции. А еще мы часто устраиваем розыгрыши, где разыгрываем напитки, купоны и другие подарки среди подписчиков!</p>
+                                <ul>
+                                    <li><a href="https://vk.com/examle14dasw"><i class="fa fa-vk"></i></a></li>
+                                    <li><a href="https://t.me/fdssdf3424"><i class="fa fa-telegram"></i></a></li>
+                                </ul>
+                            </aside>
+                        </div>
+                        <div class="col-md-6">
+                            <aside class="f_widget contact_widget">
+                                <div class="f_w_title">
+                                    <h4>Контактная информация</h4>
+                                </div>
+                                <p>Если у вас остались вопросы, будем рады на них ответить!</p>
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-envelope"></i>barprojectofficial@gmail.com</a></li>
+                                    <li><a href="#"><i class="fa fa-phone"></i>+7(343)777-77-77</a></li>
+                                    <li><a href="#"><i class="fa fa-map-marker"></i> г. Екатеринбург <br /> ул. Тургенева, 4</a></li>
+                                    <li><a href="#"><i class="fa fa-clock-o"></i> Время работы: <br /> Понедельник - Пятница с 11:00 до 23:00 <br /> Суббота, Воскресенье с 11:00 до 24:00 </a></li>
+
+                                </ul>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--================End Recent Blog Area =================-->
+
+
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <!-- Rev slider js -->
+        <script src="{% static 'vendors/revolution/js/jquery.themepunch.tools.min.js' %}"></script>
+        <script src="{% static 'vendors/revolution/js/jquery.themepunch.revolution.min.js' %}"></script>
+        <script src="{% static 'vendors/revolution/js/extensions/revolution.extension.video.min.js' %}"></script>
+        <script src="{% static 'vendors/revolution/js/extensions/revolution.extension.slideanims.min.js' %}"></script>
+        <script src="{% static 'vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+        <script src="{% static 'vendors/revolution/js/extensions/revolution.extension.navigation.min.js' %}"></script>
+        <script src="{% static 'vendors/revolution/js/extensions/revolution.extension.parallax.min.js' %}"></script>
+        <!-- Extra plugin js -->
+        <script src="{% static 'vendors/bootstrap-selector/bootstrap-select.js' %}"></script>
+        <script src="{% static 'vendors/bootatrap-date-time/bootstrap-datetimepicker.min.js' %}"></script>
+        <script src="{% static 'vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'vendors/isotope/imagesloaded.pkgd.min.js' %}"></script>
+        <script src="{% static 'vendors/isotope/isotope.pkgd.min.js' %}"></script>
+        <script src="{% static 'vendors/countdown/jquery.countdown.js' %}"></script>
+        <script src="{% static 'vendors/js-calender/zabuto_calendar.min.js' %}"></script>
+        <script src="{% static 'js/theme.js' %}"></script>
+    </body>
+</html>

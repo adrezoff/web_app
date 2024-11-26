@@ -1,0 +1,91 @@
+{% extends 'base.html'%}
+{% block title%}
+Заказ столика
+{%endblock title%}
+
+{% block content%}
+
+        <!--================Banner Area =================-->
+        <section class="banner_area">
+            <div class="container">
+                <div class="banner_content">
+                    <h4>Бронирование столика</h4>
+                    <a href="{% url 'Home:index' %}">Главная</a>
+                    <a class="active" href="">Бронирование</a>
+                </div>
+            </div>
+        </section>
+        <!--================End Banner Area =================-->
+
+        <!--================Booking Table Area =================-->
+        <section class="booking_table_area booking_area_white">
+            <div class="container">
+                <div class="s_black_title">
+                  {% if messages%}
+                  <p>{{messages}}</p>
+                  {%endif%}
+                    <h3>Заказать</h3>
+                    <h2>столик</h2>
+                    <p>Заполните форму для быстрого бронирования столика</p>
+                </div>
+                <form class="form_area" action="{% url 'Booking:table' %}" method="POST">
+                  {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-4 form-group">
+                            <div class="input-append date form_datetime">
+                                <input size="16" type="text" value="" readonly placeholder="Дата" name="date" required>
+                                <span class="add-on"><i class="icon-th"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <div class="input-append date form_time">
+                                <input size="16" type="text" value="" readonly placeholder="Время" name="time" required>
+                                <span class="add-on"><i class="icon-th"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <div class="party_size">
+                                <select class="selectpicker" name="person" required>
+                                    <option>1 персона</option>
+                                    <option>2 персоны</option>
+                                    <option>3 персоны</option>
+                                    <option>4 персоны</option>
+                                    <option>5 персон</option>
+                                    <option>6 персон</option>
+                                    <option>более 6 персон</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input type="text" class="form-control" id="name" placeholder="Имя" name="name" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input type="email" class="form-control" id="email" placeholder="Почта(Email)" name="email"required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input type="text" class="form-control" id="phone" placeholder="Телефон" name="phone" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <div class="party_size">
+                              <label for="occasion">Выберите повод (необязательно)</label>
+                                <select class="selectpicker" id="occasion" name="occasion">
+                                    <option>Не указано</option>
+                                    <option>День Рождение</option>
+                                    <option>Годовщина</option>
+                                    <option>Встреча с друзьями</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <textarea class="form-control" rows="2" name="special_request" placeholder="Пожелания"></textarea>
+                        </div>
+                        <div class="col-md-12 form-group">
+                          <input type="submit" class="btn btn-danger" name="" value="Забронировать">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <!--================End Booking Table Area =================-->
+{%endblock content%}
