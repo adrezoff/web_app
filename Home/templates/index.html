@@ -1,60 +1,77 @@
 {% extends 'base.html' %}
-{% load static%}
+{% load static %}
 
-{% block title%}
+{% block title %}
 BAR PROJECT
-{% endblock title%}
+{% endblock title %}
 
-{% block content%}
-        <section class="banner_area_index">
-            <div class="container">
-                <div class="banner_content">
-                    <h4>Bar project</h4>
-                    <h5>Стильный бар</h5>
-
-                </div>
+{% block content %}
+    <section class="banner_area_index">
+        <div class="container">
+            <div class="banner_content">
+                <h4>Bar project</h4>
+                <h5>Стильный бар</h5>
             </div>
-        </section>
-        <section class="most_popular_item_area">
-            <div class="container">
-                <div class="s_white_title">
-                    <h3>Меню и карта бара</h3>
-                </div>
-                <div class="popular_filter">
-                    <ul>
-                        <li class="active" data-filter="*"><a href="">All</a></li>
-                      {% for category in categories%}
-                        <li data-filter=".{{category}}"><a href="#{{category}}">{{category}}</a></li>
-                      {%endfor%}
-                    </ul>
-                </div>
+        </div>
+    </section>
 
-                <div class="p_recype_item_main">
-                    <div class="row p_recype_item_active">
-                      {%for category in categories%}
-                      {% for meal_list in meal_lists%}
-                      {% if meal_list.category == category%}
+    <section class="most_popular_item_area">
+        <div class="container">
+            <div class="s_white_title">
+                <h3>Меню и карта бара</h3>
+            </div>
+            <div class="popular_filter">
+                <ul>
+                    <li class="active"><a href="#" data-filter="all">Все</a></li>
+                    {% for category in categories %}
+                    <li><a href="#" data-filter="{{ category.id }}">{{ category.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
 
-                        <div class="col-md-6 {{category}}">
-                            <div class="media">
-                                <div class="media-left">
-                                    <img src="{{meal_list.image.url}}" alt="{%static 'img/recype/recype-1.jpg' %}">
-                                </div>
-                                <div class="media-body">
-                                    <a href="#"><h3>{{meal_list.name}}</h3></a>
-                                    <h4>{{meal_list.price}} РУБ</h4>
-                                    <p>{{meal_list.description}} </p>
-                                </div>
+            <div class="p_recype_item_main">
+                <div class="row p_recype_item_active">
+                    {% for meal in meal_lists %}
+                    <div class="col-md-6 category-{{ meal.category.id }}">
+                        <div class="media">
+                            <div class="media-left">
+                                <img src="{{ meal.image.url }}" alt="{{ meal.name }}">
+                            </div>
+                            <div class="media-body">
+                                <a href="#"><h3>{{ meal.name }}</h3></a>
+                                <h4>{{ meal.price }} РУБ</h4>
+                                <p>{{ meal.description }}</p>
                             </div>
                         </div>
-                      {%endif%}
-
-                      {%endfor%}
-                      {%endfor%}
-
                     </div>
+                    {% endfor %}
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-{%endblock content%}
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterLinks = document.querySelectorAll('.popular_filter a');
+            const items = document.querySelectorAll('.p_recype_item_main .col-md-6');
+
+            filterLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const filter = e.target.getAttribute('data-filter');
+
+                    items.forEach(item => {
+                        if (filter === 'all' || item.classList.contains(`category-${filter}`)) {
+                            item.style.display = '';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+
+                    filterLinks.forEach(link => link.parentElement.classList.remove('active'));
+                    e.target.parentElement.classList.add('active');
+                });
+            });
+        });
+    </script>
+{% endblock content %}
