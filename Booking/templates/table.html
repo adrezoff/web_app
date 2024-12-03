@@ -20,10 +20,14 @@
         <!--================Booking Table Area =================-->
         <section class="booking_table_area booking_area_white">
             <div class="container">
+                <div class="s_black_title text-center">
+                    {% if messages %}
+                    <div class="alert {% if message_type == 'success' %}alert-success{% else %}alert-danger{% endif %}">
+                        {{ messages }}
+                    </div>
+                </div>
+                {%endif%}
                 <div class="s_black_title">
-                  {% if messages%}
-                  <p>{{messages}}</p>
-                  {%endif%}
                     <h3>Заказать</h3>
                     <h2>столик</h2>
                     <p>Заполните форму для быстрого бронирования столика</p>
@@ -38,24 +42,14 @@
                         </div>
                         <div class="col-md-4 form-group">
                             <div class="input-append date form_time">
-                                <input size="16" type="text" value="" readonly placeholder="Время" name="time" required>
-                            </div>
-                        </div>
-                        <div class="col-md-4 form-group">
-                            <div class="party_size">
-                                <select class="selectpicker" name="person" required>
-                                    <option>1 персона</option>
-                                    <option>2 персоны</option>
-                                    <option>3 персоны</option>
-                                    <option>4 персоны</option>
-                                    <option>5 персон</option>
-                                    <option>6 персон</option>
-                                    <option>более 6 персон</option>
-                                </select>
+                                <input size="16" type= "text" value="" readonly placeholder="Время" name="time" required>
                             </div>
                         </div>
                         <div class="form-group col-md-4">
                             <input type="text" class="form-control" id="name" placeholder="Имя" name="name" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input type="number" min="0" class="form-control" id="person" placeholder="Персон" name="person" required>
                         </div>
                         <div class="form-group col-md-4">
                             <input type="email" class="form-control" id="email" placeholder="Почта(Email)" name="email"required>
@@ -63,19 +57,7 @@
                         <div class="form-group col-md-4">
                             <input type="text" class="form-control" id="phone" placeholder="Телефон" name="phone" required>
                         </div>
-                        <div class="col-md-6 form-group">
-                            <div class="party_size">
-                              <label for="occasion">Выберите повод (необязательно)</label>
-                                <select class="selectpicker" id="occasion" name="occasion">
-                                    <option>Не указано</option>
-                                    <option>День Рождение</option>
-                                    <option>Годовщина</option>
-                                    <option>Встреча с друзьями</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                             <textarea class="form-control" rows="2" name="special_request" placeholder="Пожелания"></textarea>
                         </div>
                         <div class="col-md-12 form-group">

@@ -1,14 +1,26 @@
 from django.db import models
 
 
+class Table(models.Model):
+    number = models.IntegerField(unique=True)
+    capacity = models.IntegerField()
+
+    class Meta:
+        verbose_name = "Table"
+        verbose_name_plural = "Tables"
+
+    def __str__(self):
+        return f"Table {self.number} (Capacity: {self.capacity})"
+
+
 class TableBook(models.Model):
     date = models.DateField()
     time = models.TimeField()
-    person = models.CharField(max_length=50)
+    person = models.IntegerField()
+    table = models.ForeignKey(Table, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=50)
     email = models.EmailField()
     phone = models.CharField(max_length=50)
-    occasion = models.CharField(max_length=50,blank=True)
     special_request = models.TextField(blank=True)
 
     class Meta:
@@ -16,5 +28,5 @@ class TableBook(models.Model):
         verbose_name_plural = "Table Books"
 
     def __str__(self):
-        return self.name
+        return f"{self.name} - Table {self.table}"
 
