@@ -6,7 +6,6 @@
 
 {% block content%}
 
-        <!--================Banner Area =================-->
         <section class="banner_area">
             <div class="container">
                 <div class="banner_content">
@@ -16,9 +15,7 @@
                 </div>
             </div>
         </section>
-        <!--================End Banner Area =================-->
 
-        <!--================About Us Content Area =================-->
         <section class="about_us_content">
             <div class="container">
               {% for about in about_us%}
@@ -27,10 +24,6 @@
                         <div class="about_left_content">
                             <h4>{{about.title}}</h4>
                             <p>{{about.description_main}}.</p>
-                            <ul>
-                                <li><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> {{about.content_sub}}.</li>
-                            </ul>
-                            <p>{{about.description_sub}}.</p>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -45,5 +38,4 @@
 
             </div>
         </section>
-        <!--================End About Us Content Area =================-->
 {%endblock content%}

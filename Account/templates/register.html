@@ -1,32 +1,64 @@
 {% extends 'base.html' %}
 
+{% block title %}
+Регистрация
+{% endblock title %}
+
 {% block content %}
-        <section class="banner_area">
-            <div class="container">
-                <div class="banner_content">
-                    <h4>Регистрация</h4>
-                    <a href="{% url 'Home:index' %}">Главная</a>
-                    <a class="active" href="">Регистрация</a>
-                </div>
+    <section class="banner_area">
+        <div class="container">
+            <div class="banner_content">
+                <h4>Регистрация</h4>
+                <a href="{% url 'Home:index' %}">Главная</a>
+                <a class="active" href="">Регистрация</a>
             </div>
-        </section>
-        <section>
-            <h2>Регистрация</h2>
+        </div>
+    </section>
+
+    <section class="registration_section">
+        <div class="container">
+            <div class="registration_title">Регистрация</div>
+
+            {% if messages %}
+                <div class="alert {% if message_type == 'success' %}alert-success{% else %}alert-danger{% endif %}">
+                    {{ messages }}
+                </div>
+            {% endif %}
+
             <form method="post">
                 {% csrf_token %}
-                <div class="form-group">
-                    {{ form.username }}
+
+                <div class="table_form_area">
+                    <div class="form_group">
+                        <label for="username">Логин</label>
+                        {{ form.username }}
+                    </div>
+
+                    <div class="form_group">
+                        <label for="email">Email</label>
+                        {{ form.email }}
+                    </div>
+
+                    <div class="form_group">
+                        <label for="phone">Телефон</label>
+                        {{ form.phone_number }}
+                    </div>
+
+                    <div class="form_group">
+                        <label for="password1">Пароль</label>
+                        {{ form.password1 }}
+                    </div>
+
+                    <div class="form_group">
+                        <label for="password2">Подтверждение пароля</label>
+                        {{ form.password2 }}
+                    </div>
+
+                    <div class="form_group">
+                        <button type="submit" class="btn_submit">Зарегистрироваться</button>
+                    </div>
                 </div>
-                <div class="form-group">
-                    {{ form.email }}
-                </div>
-                <div class="form-group">
-                    {{ form.password1 }}
-                </div>
-                <div class="form-group">
-                    {{ form.password2 }}
-                </div>
-                <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
             </form>
-        </section>
+        </div>
+    </section>
 {% endblock %}

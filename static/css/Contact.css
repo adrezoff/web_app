@@ -1,0 +1,188 @@
+/*----------------------------------------------------*/
+/* Contact area css
+============================================================================================ */
+.contact_area {
+    padding: 100px 0px;
+}
+
+.contact_area .contact_details p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: regular;
+    color: #666666;
+    line-height: 26px;
+}
+
+.contact_area .contact_details .media {
+    margin-top: 40px;
+}
+
+.contact_area .contact_details .media .media-left {
+    padding-right: 30px;
+}
+
+.contact_area .contact_details .media .media-left i {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    color: #fff;
+    line-height: 60px;
+    font-size: 30px;
+    background: #b10400;
+    text-align: center;
+    border: 1px solid #b10400;
+    transition: all 400ms linear 0s;
+}
+
+.contact_area .contact_details .media .media-body {
+    vertical-align: middle;
+}
+
+.contact_area .contact_details .media .media-body h4 {
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: regular;
+    text-transform: uppercase;
+    color: #34495e;
+    font-weight: bold;
+    padding-bottom: 12px;
+}
+
+.contact_area .contact_details .media .media-body h5 {
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: regular;
+    color: #666666;
+}
+
+.contact_area .contact_details .media:hover .media-left i {
+    background: transparent;
+    color: #b10400;
+}
+
+.contact_title {
+    font-size: 36px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: Bold;
+    color: #34495e;
+    text-transform: uppercase;
+    padding-bottom: 42px;
+}
+
+.row.contact_form_area .contact_title {
+    padding-left: 15px;
+}
+
+.row.contact_form_area .form-group {
+    margin-bottom: 20px;
+}
+
+.row.contact_form_area .form-group input {
+    height: 40px;
+    box-shadow: none;
+    text-shadow: none;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: regular;
+    color: #000000;
+    padding: 0px 15px;
+}
+
+
+.row.contact_form_area .form-group input:-moz-placeholder {
+    font-family: "Montserrat", sans-serif;
+    font-weight: regular;
+    color: #666666;
+    font-size: 14px;
+}
+
+.row.contact_form_area .form-group input::-moz-placeholder {
+    font-family: "Montserrat", sans-serif;
+    font-weight: regular;
+    color: #666666;
+    font-size: 14px;
+}
+
+.row.contact_form_area .form-group input::-webkit-input-placeholder {
+    font-family: "Montserrat", sans-serif;
+    font-weight: regular;
+    color: #666666;
+    font-size: 14px;
+}
+
+.row.contact_form_area .form-group input:focus {
+    border-color: #b10400;
+}
+
+.row.contact_form_area .form-group textarea {
+    height: 120px;
+    border-radius: 0px;
+    box-shadow: none;
+    text-shadow: none;
+    border: 1px solid #dfdfdf;
+    font-family: "Montserrat", sans-serif;
+    font-weight: regular;
+    color: #666666;
+    font-size: 14px;
+    resize: none;
+    padding: 10px 15px;
+}
+
+.row.contact_form_area .form-group textarea.placeholder {
+    font-family: "Montserrat", sans-serif;
+    font-weight: regular;
+    color: #666666;
+    font-size: 14px;
+}
+
+.row.contact_form_area .form-group textarea:-moz-placeholder {
+    font-family: "Montserrat", sans-serif;
+    font-weight: regular;
+    color: #666666;
+    font-size: 14px;
+}
+
+.row.contact_form_area .form-group textarea::-moz-placeholder {
+    font-family: "Montserrat", sans-serif;
+    font-weight: regular;
+    color: #666666;
+    font-size: 14px;
+}
+
+.row.contact_form_area .form-group textarea::-webkit-input-placeholder {
+    font-family: "Montserrat", sans-serif;
+    font-weight: regular;
+    color: #666666;
+    font-size: 14px;
+}
+
+.row.contact_form_area .form-group textarea:focus {
+    border-color: #b10400;
+}
+
+
+.row.contact_form_area .form-group:last-child {
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+.row.contact_form_area .button {
+    margin-bottom: 20px;
+}
+
+.row.contact_form_area .button input {
+    height: 40px;
+    box-shadow: none;
+    text-shadow: none;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: regular;
+    color: #fff;
+    padding: 0px 15px;
+}
+/* End Contact area css
+============================================================================================ */
+/*---------------------------------------------------- */

@@ -6,7 +6,7 @@ from .models import CustomUser
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = CustomUser
-        fields = ('username', 'email', 'password1', 'password2')
+        fields = ('username', 'email', 'phone_number', 'password1', 'password2')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -46,3 +46,5 @@ class ProfileUpdateForm(forms.ModelForm):
                 'placeholder': field.label,
             })
             field.label = ''
+
+

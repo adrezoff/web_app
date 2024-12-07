@@ -1,4 +1,7 @@
-{% extends 'base.html' %}
+{% extends 'base.html'%}
+{% block title%}
+Изменение профиля
+{%endblock title%}
 
 {% block content %}
     <section class="banner_area">
@@ -12,12 +15,26 @@
         </div>
     </section>
 
-    <section>
-        <h2>Изменить профиль</h2>
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Сохранить изменения</button>
-        </form>
+    <section class="profile_edit_section">
+        <div class="container">
+            <div class="profile_title">Редактировать профиль</div>
+            <form method="post" action="{% url 'Account:profile_update' %}">
+                {% csrf_token %}
+                <div class="form_group">
+                    <label for="username">Имя пользователя</label>
+                    <input type="text" id="username" name="username" value="{{ request.user.username }}" required>
+                </div>
+                <div class="form_group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" value="{{ request.user.email }}" required>
+                </div>
+                <div class="form_group">
+                    <label for="phone_number">Телефон</label>
+                    <input type="text" id="phone_number" name="phone_number" value="{{ request.user.phone_number }}">
+                </div>
+                <button type="submit" class="btn_submit">Сохранить изменения</button>
+            </form>
+        </div>
     </section>
+
 {% endblock %}

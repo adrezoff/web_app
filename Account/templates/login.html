@@ -1,23 +1,48 @@
-{% extends 'base.html' %}
+{% extends 'base.html'%}
+{% block title%}
+Вход
+{%endblock title%}
 
 {% block content %}
-        <!--================Banner Area =================-->
         <section class="banner_area">
-            <div class="container">
-                <div class="banner_content">
-                    <h4>Вход</h4>
-                    <a href="{% url 'Home:index' %}">Главная</a>
-                    <a class="active" href="">Вход</a>
-                </div>
+        <div class="container">
+            <div class="banner_content">
+                <h4>Вход</h4>
+                <a href="{% url 'Home:index' %}">Главная</a>
+                <a class="active" href="">Вход</a>
             </div>
-        </section>
-        <!--================End Banner Area =================-->
-        <section>
-        <h2>Вход</h2>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Войти</button>
-        </form>
-        </section>
+        </div>
+    </section>
+
+    <section class="login_section">
+        <div class="container">
+            <div class="login_title">Вход в аккаунт</div>
+
+            {% if messages %}
+                <div class="alert {% if message_type == 'success' %}alert-success{% else %}alert-danger{% endif %}">
+                    {{ messages }}
+                </div>
+            {% endif %}
+
+            <form method="post">
+                {% csrf_token %}
+
+                <div class="table_form_area">
+                    <div class="form_group">
+                        <label for="username">Логин</label>
+                        {{ form.username }}
+                    </div>
+
+                    <div class="form_group">
+                        <label for="password">Пароль</label>
+                        {{ form.password }}
+                    </div>
+
+                    <div class="form_group">
+                        <button type="submit" class="btn_submit">Войти</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
 {% endblock %}

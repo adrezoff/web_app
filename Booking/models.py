@@ -1,8 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.db import models
 
-from Account.models import CustomUser
-
 
 class Table(models.Model):
     number = models.IntegerField(unique=True)

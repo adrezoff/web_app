@@ -10,10 +10,9 @@
 - Python3
 - Django Framework
 - PostgreSQL
-- HTML5
+- HTML
 - CSS 
 - JavaScript
-- Bootstrap (используется css, js)
 
 ## Зависимости
 Создайте виртуальное окружение.
@@ -29,7 +28,6 @@ $ pip3 install -r requirements.txt
 
 Создайте базу данных и настройте суперпользователя и выполните эти команды.
 ```sh
-cd backend
 python3 manage.py makemigrations
 python3 manage.py migrate
 ```

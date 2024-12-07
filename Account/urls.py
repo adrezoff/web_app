@@ -13,4 +13,5 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout'),
     path('accounts/login/', RedirectView.as_view(url='/account/login/')),
     path('cancel_booking/<int:booking_id>/', views.cancel_booking, name='cancel_booking'),
+    path('change-password/', views.change_password, name='change_password'),
 ]
