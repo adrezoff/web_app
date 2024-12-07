@@ -28,7 +28,6 @@
             </div>
         </div>
 
-        <!--================ Frist hader Area =================-->
         <div class="first_header">
             <div class="container">
                 <div class="row">
@@ -52,9 +51,7 @@
                 </div>
             </div>
         </div>
-        <!--================End Footer Area =================-->
 
-        <!--================End Footer Area =================-->
         <header class="main_menu_area">
             <nav class="navbar navbar-default">
                 <div class="container">
@@ -68,7 +65,6 @@
                         <a class="navbar-brand" href=""><img src="{% static 'img/logo-3m.png' %}" alt=""></a>
                     </div>
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="active"><a href="{% url 'Home:index' %}">Главная</a></li>
@@ -76,13 +72,18 @@
                             <li><a href="{% url 'Menu:menu' %}">Меню</a></li>
                             <li><a href="{% url 'Booking:table' %}">Заказ столика</a></li>
                             <li><a href="{% url 'Contact:contact'%}">Контакты</a></li>
-
+                            {% if user.is_authenticated %}
+                                <li><a href="{% url 'Account:profile' %}">Профиль</a></li>
+                                <li><a href="{% url 'Account:logout' %}">Выйти</a></li>
+                            {% else %}
+                                <li><a href="{% url 'Account:login' %}">Вход</a></li>
+                                <li><a href="{% url 'Account:register' %}">Регистрация</a></li>
+                            {% endif %}
                         </ul>
-                    </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
+                    </div>
+                </div>
             </nav>
         </header>
-        <!--================End Footer Area =================-->
 {% block content%}
 
 
@@ -123,7 +124,6 @@
                 </div>
             </div>
         </footer>
-        <!--================End Recent Blog Area =================-->
 
         <script src="{% static 'js/bootstrap.min.js' %}"></script>
 

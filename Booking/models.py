@@ -1,4 +1,7 @@
+from django.contrib.auth import get_user_model
 from django.db import models
+
+from Account.models import CustomUser
 
 
 class Table(models.Model):
@@ -14,6 +17,7 @@ class Table(models.Model):
 
 
 class TableBook(models.Model):
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='bookings')
     date = models.DateField()
     time = models.TimeField()
     person = models.IntegerField()

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <!--================Banner Area =================-->
+        <section class="banner_area">
+            <div class="container">
+                <div class="banner_content">
+                    <h4>Вход</h4>
+                    <a href="{% url 'Home:index' %}">Главная</a>
+                    <a class="active" href="">Вход</a>
+                </div>
+            </div>
+        </section>
+        <!--================End Banner Area =================-->
+        <section>
+        <h2>Вход</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Войти</button>
+        </form>
+        </section>
+{% endblock %}

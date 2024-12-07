@@ -1,8 +1,10 @@
 from datetime import datetime, time as dt_time
+
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from .models import TableBook, Table
 
-
+@login_required
 def TableBooking(request):
     if request.method == "POST":
         try:
@@ -28,7 +30,7 @@ def TableBooking(request):
                 )
                 if not overlapping_bookings.exists():
                     table_book = TableBook(
-                        date=date, time=time, person=person, table=table,
+                        user=request.user, date=date, time=time, person=person, table=table,
                         name=name, email=email, phone=phone, special_request=special_request
                     )
                     table_book.save()

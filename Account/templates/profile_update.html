@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="banner_area">
+        <div class="container">
+            <div class="banner_content">
+                <h4>Изменение профиля</h4>
+                <a href="{% url 'Home:index' %}">Главная</a>
+                <a href="{% url 'Account:profile' %}">Профиль</a>
+                <a class="active" href="">Изменение профиля</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Изменить профиль</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Сохранить изменения</button>
+        </form>
+    </section>
+{% endblock %}

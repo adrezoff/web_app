@@ -10,7 +10,7 @@ urlpatterns = [
     path('', include('Menu.urls')),
     path('', include('Contact.urls')),
     path('', include('About.urls')),
-
+    path('account/', include('Account.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

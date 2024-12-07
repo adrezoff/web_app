@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <section class="banner_area">
+            <div class="container">
+                <div class="banner_content">
+                    <h4>Регистрация</h4>
+                    <a href="{% url 'Home:index' %}">Главная</a>
+                    <a class="active" href="">Регистрация</a>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Регистрация</h2>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.username }}
+                </div>
+                <div class="form-group">
+                    {{ form.email }}
+                </div>
+                <div class="form-group">
+                    {{ form.password1 }}
+                </div>
+                <div class="form-group">
+                    {{ form.password2 }}
+                </div>
+                <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+            </form>
+        </section>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="banner_area">
+        <div class="container">
+            <div class="banner_content">
+                <h4>Профиль</h4>
+                <a href="{% url 'Home:index' %}">Главная</a>
+                <a class="active" href="">Профиль</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Ваш профиль</h2>
+        <p>Имя: {{ request.user.username }}</p>
+        <p>Email: {{ request.user.email }}</p>
+        <p>Телефон: {{ request.user.phone_number }}</p>
+
+        <a href="{% url 'Account:profile_update' %}">Изменить профиль</a>
+
+        <h3>Ваши бронирования</h3>
+        {% if bookings %}
+            <ul>
+                {% for booking in bookings %}
+                    <li>
+                        <p>Дата: {{ booking.date }} | Время: {{ booking.time }} | Стол: {{ booking.table.number }} | Людей: {{ booking.person }}</p>
+                        <p>Запрос: {{ booking.special_request }}</p>
+                        <form action="{% url 'Account:cancel_booking' booking.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">Отменить бронирование</button>
+                        </form>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>У вас нет бронирований.</p>
+        {% endif %}
+    </section>
+{% endblock %}
