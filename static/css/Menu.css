@@ -1,6 +1,4 @@
-/* Most Popular item css
-============================================================================================ */
-.most_popular_item_area {
+.menu_item_area {
     background: url(../img/menu_bg.jpg) no-repeat scroll center center;
     background-size: cover;
     background-attachment: fixed;
@@ -9,7 +7,7 @@
     z-index: 2;
 }
 
-.most_popular_item_area:before {
+.menu_item_area:before {
     content: "";
     background: rgba(177, 4, 0, 0.8);
     width: 100%;
@@ -20,18 +18,18 @@
     z-index: -1;
 }
 
-.most_popular_item_area .popular_filter {
+.menu_item_area .popular_filter {
     text-align: center;
     margin: 45px 0px 55px 0px;
     overflow: hidden;
 }
 
-.most_popular_item_area .popular_filter li {
+.menu_item_area .popular_filter li {
     display: inline-block;
     margin-right: 12px;
 }
 
-.most_popular_item_area .popular_filter li a {
+.menu_item_area .popular_filter li a {
     text-align: center;
     font-size: 14px;
     font-family: "Montserrat", sans-serif;
@@ -45,41 +43,41 @@
     transition: all 400ms linear 0s;
 }
 
-.most_popular_item_area .popular_filter li:hover a, .most_popular_item_area .popular_filter li.active a {
+.menu_item_area .popular_filter li:hover a, .most_popular_item_area .popular_filter li.active a {
     background: #111111;
     border-color: #fff;
     color: #fff;
 }
 
-.most_popular_item_area .popular_filter li:last-chlild {
+.menu_item_area .popular_filter li:last-chlild {
     margin-right: 0px;
 }
 
-.most_popular_item_area .p_recype_item_main {
+.menu_item_area .p_recype_item_main {
     background: #fff;
     padding: 50px 65px;
 }
 
-.most_popular_item_area .p_recype_item_main .row.p_recype_item_active {
+.menu_item_area .p_recype_item_main .row.p_recype_item_active {
     margin-top: -30px;
 }
 
-.most_popular_item_area .p_recype_item_main .media {
+.menu_item_area .p_recype_item_main .media {
     margin-top: 30px;
 }
 
-.most_popular_item_area .p_recype_item_main .media .media-left {
+.menu_item_area .p_recype_item_main .media .media-left {
     padding-right: 0;
 }
 
-.most_popular_item_area .p_recype_item_main .media .media-body {
+.menu_item_area .p_recype_item_main .media .media-body {
     border: 1px solid #b10400;
     padding-left: 15px;
     border-left: 0px;
     padding-right: 15px;
 }
 
-.most_popular_item_area .p_recype_item_main .media .media-body h3 {
+.menu_item_area .p_recype_item_main .media .media-body h3 {
     font-size: 14px;
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
@@ -90,7 +88,7 @@
     padding-top: 15px;
 }
 
-.most_popular_item_area .p_recype_item_main .media .media-body h4 {
+.menu_item_area .p_recype_item_main .media .media-body h4 {
     display: inline-block;
     float: right;
     font-size: 14px;
@@ -101,7 +99,7 @@
     padding-top: 15px;
 }
 
-.most_popular_item_area .p_recype_item_main .media .media-body p {
+.menu_item_area .p_recype_item_main .media .media-body p {
     font-size: 14px;
     color: #666666;
     font-family: "regular", sans-serif;
@@ -109,35 +107,33 @@
     padding: 5px 0px 15px 0px;
 }
 
-.most_popular_item_area .p_recype_item_main .media .media-body ul {
+.menu_item_area .p_recype_item_main .media .media-body ul {
     display: inline-block;
     float: right;
     vertical-align: bottom;
 }
 
-.most_popular_item_area .p_recype_item_main .media .media-body ul li {
+.menu_item_area .p_recype_item_main .media .media-body ul li {
     display: inline-block;
 }
 
-.most_popular_item_area .p_recype_item_main .media .media-body ul li a {
+.menu_item_area .p_recype_item_main .media .media-body ul li a {
     color: #ffcf3b;
     font-size: 14px;
 }
 
-.most_popular_item_area .p_recype_item_main .media:hover .media-body h3 {
+.menu_item_area .p_recype_item_main .media:hover .media-body h3 {
     color: #b10400;
 }
 
-.most_popular_item_area.menu_list_page {
+.menu_item_area.menu_list_page {
     background: #fff;
 }
 
-.most_popular_item_area.menu_list_page:before {
+.menu_item_area.menu_list_page:before {
     display: none;
 }
 
-.most_popular_item_area.menu_list_page .popular_filter {
+.menu_item_area.menu_list_page .popular_filter {
     margin: 0px;
 }
-/* End Most Popular item css
-============================================================================================ */

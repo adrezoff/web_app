@@ -12,12 +12,12 @@ def register_view(request):
         form = CustomUserCreationForm(request.POST, request.FILES)
         if form.is_valid():
             user = form.save()
-            login(request, user)  # Автоматический вход после регистрации
+            login(request, user)
             context = {
                 'messages': 'Вы успешно зарегистрированы!',
                 'message_type': 'success'
             }
-            return redirect('Account:profile')  # Перенаправление на профиль после регистрации
+            return redirect('Account:profile')
         else:
             context = {
                 'messages': 'Ошибка регистрации. Проверьте введенные данные.',

@@ -1,6 +1,3 @@
-/*---------------------------------------------------- */
-/* Bookink Table css
-============================================================================================ */
 .booking_table_area {
     background-size: cover;
     position: relative;
@@ -205,6 +202,3 @@
 .booking_table_area.booking_area_white .form_area .form-group:last-child {
     margin-bottom: 0px;
 }
-
-/* End Bookink Table css
-============================================================================================ */
