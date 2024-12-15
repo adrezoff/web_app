@@ -1,4 +1,4 @@
-from datetime import datetime, time as dt_time
+from datetime import datetime, time as dt_time, timedelta
 
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
@@ -22,12 +22,16 @@ def TableBooking(request):
             special_request = request.POST.get('special_request', '')
 
             available_tables = Table.objects.filter(capacity__gte=person)
+            time_delta = timedelta(hours=2)
 
             for table in available_tables:
+                base_datetime = datetime.combine(date, time)
+
                 overlapping_bookings = TableBook.objects.filter(
                     table=table,
                     date=date,
-                    time=time
+                    time__gte=(base_datetime - time_delta).time(),
+                    time__lt=(base_datetime + time_delta).time()
                 )
                 if not overlapping_bookings.exists():
                     table_book = TableBook(
